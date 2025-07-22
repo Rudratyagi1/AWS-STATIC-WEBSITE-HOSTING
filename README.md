@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-blue)
 ![License](https://img.shields.io/badge/License-MIT-blue)
-![Last Commit](https://img.shields.io/github/last-commit/<your-username>/aws-s3-static-website-hosting-acl-policy?color=purple)
+
 
 ---
 
