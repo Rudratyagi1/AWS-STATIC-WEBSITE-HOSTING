@@ -75,47 +75,6 @@ Key Highlights:
   ]
 }
 
+'''json
 
 
- ## 📸 Screenshots
-
-### S3 Bucket Creation
-![Create Bucket](screenshots/create-bucket.png)
-
-### Upload Website Files
-![Upload Files](screenshots/upload-files.png)
-
-### Enable Static Website Hosting
-![Enable Hosting](screenshots/enable-hosting.png)
-
-### Hosted Webpage
-![Webpage](screenshots/webpage.png)
-
-
-🚀 Steps to Reproduce
-Create S3 bucket (ACL: Bucket Owner Preferred).
-
-Disable Block Public Access.
-
-Upload website files (website/index.html + assets).
-
-Enable Static Website Hosting in S3 bucket properties.
-
-Apply public-read ACL on objects.
-
-Attach bucket policy to deny deletion of index.html.
-
-🎓 Key Learning Outcomes
-Understanding difference between ACL and bucket policies.
-
-Troubleshooting S3 public access issues.
-
-Practical implementation of secure static website hosting.
-
-
-
-
-# **Next Step**
-Would you like me to:  
-**(a)** Add a **"Demo" section** in the README with a placeholder **S3 website URL (http://bucket-name.s3-website-region.amazonaws.com)**,  
-**(b)** Create a **LinkedIn post draft** announcing this project with **high-engagement text + hashtags**?
