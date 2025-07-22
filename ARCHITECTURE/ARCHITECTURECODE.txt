@@ -1,0 +1,14 @@
+title: AWS S3 Static Website Hosting 
+
+dev[icon: user, label: ""]
+
+s3[icon: aws-s3, label: "S3 Bucket (Static Website)"]
+acl[icon: shield, label: "Bucket ACL (Public Read)"]
+policy[icon: aws-iam-policy, label: "Bucket Policy (Deny Delete index.html)"]
+
+dev -> s3 : "1. Upload Website Files (index.html, assets)"
+s3 -> acl : "2. Apply ACL (Public Read Access)"
+s3 -> policy : "3. Attach Policy to Protect index.html"
+
+viewer[icon: user, label: "Public Viewer"]
+viewer -> s3 : "4. Access Website via S3 Static Hosting URL"
