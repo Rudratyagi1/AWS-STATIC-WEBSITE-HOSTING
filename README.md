@@ -2,63 +2,65 @@
 
 ![AWS S3](https://img.shields.io/badge/AWS-S3-orange?logo=amazon-aws&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-blue)
 ![License](https://img.shields.io/badge/License-MIT-blue)
+![Last Commit](https://img.shields.io/github/last-commit/<your-username>/aws-s3-static-website-hosting-acl-policy?color=purple)
 
 ---
 
 ## 📌 **Project Overview**
-This project demonstrates **hosting a static website on Amazon S3**, configuring **object-level ACLs** and **bucket policies** to secure critical files like `index.html`.  
+This project demonstrates **static website hosting on Amazon S3** with **object-level ACLs and bucket policies** for enhanced access control and protection of critical files like `index.html`.
 
-Key Actions:
-1. Create an S3 bucket with **Bucket Owner Preferred ACL**.
-2. Disable **Block Public Access** to allow public hosting.
-3. Upload static website files (HTML + assets).
-4. Configure **object ACLs** to make files public.
-5. Apply a **bucket policy** that **denies deletion of index.html** by any user.
+Key Highlights:
+- **Hosted website** on an S3 bucket.
+- **Enabled ACLs** to allow **public read access**.
+- **Applied bucket policy** to **deny deletion of index.html**.
+- **Learned troubleshooting for public access errors**.
 
 ---
 
 ## 🎯 **Why These AWS Services?**
-
-### **Amazon S3 (Static Website Hosting)**
+### **Amazon S3**
 - **Why S3?**  
-  S3 is **highly durable, scalable, and cost-effective** for hosting static websites. Unlike traditional web servers (e.g., Apache or Nginx), S3 removes the need for server management.  
-- **Why not competitors (e.g., Google Cloud Storage, Azure Blob)?**  
-  S3 has better **global reach**, **simpler static hosting**, and **tighter integration** with AWS IAM, CloudFront, and Route53. It’s also the **most widely adopted in enterprise setups**.
+  - Highly durable, globally distributed storage (11 nines durability).
+  - Eliminates server management vs. alternatives like Apache/Nginx.
+- **Why not Azure Blob or Google Cloud Storage?**  
+  - S3 has **best integration with AWS ecosystem** (IAM, CloudFront, Route53).
+  - **Cheaper and simpler** static hosting vs. competitors.
 
 ### **ACL (Access Control List)**
 - **Why ACL?**  
-  ACLs allow **object-level public read access** — required for a static website where files must be accessible publicly.  
-- **Why not IAM roles only?**  
-  IAM roles control account-level access but cannot directly make an object public. ACL is required for **fine-grained object permissions**.
+  - Allows **object-level public access**, essential for static websites.
+- **Why not IAM alone?**  
+  - IAM policies control AWS users/roles, not direct public access to objects.
 
 ### **Bucket Policy**
 - **Why Bucket Policy?**  
-  The policy ensures **index.html cannot be deleted** — adding a **security layer**.  
+  - Prevents unauthorized deletion of critical files.
 - **Why not ACL alone?**  
-  ACL controls access, but **bucket policy provides explicit deny rules** and is more secure and auditable.
+  - ACL cannot define **explicit deny rules**.
 
 ---
 
 ## 🔧 **Tech Stack**
-| Service/Tool          | Purpose                                        |
-|-----------------------|------------------------------------------------|
-| **Amazon S3**         | Host static website content                    |
-| **Bucket ACL**        | Public read access for website files            |
-| **Bucket Policy**     | Security (prevent delete of index.html)         |
-| **AWS Console Skills**| Hands-on configuration and debugging            |
+| Service/Tool          | Purpose                                         |
+|-----------------------|-------------------------------------------------|
+| **Amazon S3**         | Host static website content                     |
+| **Bucket ACL**        | Allow public read for website files             |
+| **Bucket Policy**     | Protect critical objects like `index.html`      |
+| **AWS Console Skills**| Configuration, troubleshooting, and debugging   |
 
 ---
 
 ## 🏗 **Architecture**
-![Architecture][def]
+![Architecture](architecture/architecture.png)
 
-**Eraser.io Diagram Code:** [architecture.eraser](diagrams/architecture.eraser)  
+**[View Eraser.io Code](architecture/architecture.eraser)**  
 
 ---
 
-## 📝 **Bucket Policy Example**
-`policies/bucket-policy.json`
+## 📝 **Bucket Policy**
+`policies/s3policy.txt`
 ```json
 {
   "Version": "2012-10-17",
@@ -72,52 +74,48 @@ Key Actions:
     }
   ]
 }
+
+
+
+ ## 📸 Screenshots
+
+### S3 Bucket Creation
+![Create Bucket](screenshots/create-bucket.png)
+
+### Upload Website Files
+![Upload Files](screenshots/upload-files.png)
+
+### Enable Static Website Hosting
+![Enable Hosting](screenshots/enable-hosting.png)
+
+### Hosted Webpage
+![Webpage](screenshots/webpage.png)
+
+
 🚀 Steps to Reproduce
-Create an S3 bucket (ACL: Bucket Owner Preferred).
+Create S3 bucket (ACL: Bucket Owner Preferred).
 
 Disable Block Public Access.
 
-Upload website files to the bucket.
+Upload website files (website/index.html + assets).
 
-Enable Static Website Hosting under Properties.
+Enable Static Website Hosting in S3 bucket properties.
 
-Set object ACL to public read for index.html.
+Apply public-read ACL on objects.
 
-Attach bucket policy to protect index.html.
+Attach bucket policy to deny deletion of index.html.
 
-🎓 What I Learned
-Difference between ACL vs Bucket Policy.
+🎓 Key Learning Outcomes
+Understanding difference between ACL and bucket policies.
 
-How S3 static hosting works and troubleshooting access errors.
+Troubleshooting S3 public access issues.
 
-Practical security measures in AWS.
-
-📢 Author
-Rudra – AWS ML Engineer | Cloud Enthusiast
-LinkedIn | GitHub
-
-yaml
-Copy
-Edit
-
----
-
-# **Why This Project Makes You Stand Out**
-- **S3 Static Website Hosting** is a **classic real-world AWS scenario**—shows practical understanding of **IAM, ACLs, and security**.
-- Demonstrates **problem-solving** (you fixed the "access error" via ACLs and policies).
-- Shows **AWS Console hands-on skills** (not just theory).
-
----
-
-## **Next Step**
-Would you like me to **generate a ready-to-upload ZIP repo** (with `README.md`, `bucket-policy.json`, `website/index.html`, and `architecture.eraser`) so you can push it directly to GitHub?
+Practical implementation of secure static website hosting.
 
 
 
 
-
-
-
-
-
-[def]: diagrams/architecture.png
+# **Next Step**
+Would you like me to:  
+**(a)** Add a **"Demo" section** in the README with a placeholder **S3 website URL (http://bucket-name.s3-website-region.amazonaws.com)**,  
+**(b)** Create a **LinkedIn post draft** announcing this project with **high-engagement text + hashtags**?
